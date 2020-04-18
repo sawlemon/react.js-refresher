@@ -1,13 +1,15 @@
 import React from 'react';
 
-const CautionList = () => {
+const CautionList = (props) => {
+    console.log(props.cautions);
     return( 
     <div>
-
         <ul className="caution-list">
-            <li>Wash Hands</li>
-            <li>Don't go out</li>
-            <li>don't touch face</li>
+            {
+                props.cautions.map( (caution) =>{
+                    return <li key={caution.id}> { caution.text } </li>
+                })
+            }
         </ul>
     </div>
     );
